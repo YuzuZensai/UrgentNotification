@@ -1,0 +1,250 @@
+{
+  "info": {
+    "name": "UrgentNotification",
+    "authors": [
+      {
+        "name": "YuzuZensai",
+        "discord_id": "",
+        "github_username": "YuzuZensai",
+        "twitter_username": "YuzuZensai"
+      }
+    ],
+    "version": "0.0.2",
+    "description": "Allow urgent messages to bypass do not disturb mode, streamer mode and others.",
+    "github": "",
+    "github_raw": ""
+  },
+  "changelog": [],
+  "defaultConfig": [
+    {
+      "type": "textbox",
+      "id": "triggerCommand",
+      "name": "Trigger command",
+      "note": "Trigger command for the urgent notification",
+      "value": "!urgent"
+    },
+    {
+      "type": "switch",
+      "id": "commandResponseEnabled",
+      "name": "💬 Enable urgent command reply",
+      "note": "The plugin will send a confirmation message when the urgent command is triggered back to the user",
+      "value": true
+    },
+    {
+      "type": "switch",
+      "id": "autoReplyEnabled",
+      "name": "✉️ Enable AutoReply",
+      "note": "When a new message is received, the plugin will automatically reply with information about current status and how to trigger the urgent notification",
+      "value": true
+    },
+    {
+      "type": "switch",
+      "id": "onlyFromFriends",
+      "name": "🧑‍🤝‍🧑 Friends only mode",
+      "note": "Only reply back and allow urgent notifications from friends",
+      "value": true
+    },
+    {
+      "type": "category",
+      "id": "timer",
+      "name": "⌛ Timer",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "slider",
+          "id": "commandResponseCooldown",
+          "name": "Urgent command cooldown",
+          "note": "How long until the user can trigger the urgent command again (in minutes)",
+          "value": 5,
+          "min": 1,
+          "max": 120,
+          "markers": [1, 5, 10, 15, 20, 30, 60, 90, 120],
+          "stickToMarkers": true
+        },
+        {
+          "type": "slider",
+          "id": "autoReplyCooldown",
+          "name": "AutoReply cooldown",
+          "note": "How long until AutoReply can be triggered again (in minutes)",
+          "value": 30,
+          "min": 5,
+          "max": 120,
+          "markers": [5, 10, 15, 20, 30, 60, 90, 120],
+          "stickToMarkers": true
+        },
+        {
+          "type": "slider",
+          "id": "autoReplySelfDeleteCountdown",
+          "name": "AutoReply Self Delete Countdown",
+          "note": "How long until AutoReply will self delete the message (in minutes)",
+          "value": 5,
+          "min": 1,
+          "max": 120,
+          "markers": [1, 5, 10, 15, 20, 30, 60, 90, 120],
+          "stickToMarkers": true
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "commandResponseMessage",
+      "name": "✏️ Customize command response message",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "textbox",
+          "id": "header",
+          "name": "Header",
+          "note": "",
+          "value": "❗✉️ㅤ**__URGENT NOTIFICATION SENT__**"
+        },
+        {
+          "type": "textbox",
+          "id": "body",
+          "name": "Body",
+          "note": "",
+          "value": "If I'm taking too long to respond, please send  send ``!urgent`` again (there is a cooldown)\\nPlease don't abuse the urgent tag. Thanks you"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "streaming",
+      "name": "🔴 [AutoReply] When streaming",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "switch",
+          "id": "enabled",
+          "name": "Enable",
+          "note": "",
+          "value": true
+        },
+        {
+          "type": "textbox",
+          "id": "header",
+          "name": "Header",
+          "note": "",
+          "value": "🌙ㅤ**${username} has notifications silenced**"
+        },
+        {
+          "type": "textbox",
+          "id": "body",
+          "name": "Body",
+          "note": "",
+          "value": "🔴ㅤI'm currently streaming or recording, in order to prevent any accidental notifications being shown\\nㅤ ㅤ and other reasons. I'll check my notifications periodically."
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "dnd",
+      "name": "🔕 [AutoReply] When do not disturb enabled",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "switch",
+          "id": "enabled",
+          "name": "Enable",
+          "note": "",
+          "value": true
+        },
+        {
+          "type": "textbox",
+          "id": "header",
+          "name": "Header",
+          "note": "",
+          "value": "🌙ㅤ**${username} has notifications silenced**"
+        },
+        {
+          "type": "textbox",
+          "id": "body",
+          "name": "Body",
+          "note": "",
+          "value": "🔕ㅤI'm currently busy, I'll respond to you later."
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "idle",
+      "name": "🌙 [AutoReply] Idle",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "switch",
+          "id": "enabled",
+          "name": "Enable",
+          "note": "",
+          "value": true
+        },
+        {
+          "type": "textbox",
+          "id": "header",
+          "name": "Header",
+          "note": "",
+          "value": "🌙ㅤ**${username} is currently away**"
+        },
+        {
+          "type": "textbox",
+          "id": "body",
+          "name": "Body",
+          "note": "",
+          "value": "💤ㅤI'm currently AFK right now, doing things in real life, or just taking a break."
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "inVR",
+      "name": "🥽 [AutoReply] When using VR headset",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "switch",
+          "id": "enabled",
+          "name": "Enable",
+          "note": "",
+          "value": true
+        },
+        {
+          "type": "textbox",
+          "id": "header",
+          "name": "Header",
+          "note": "",
+          "value": "🥽ㅤ**${username} is currently in VR**"
+        },
+        {
+          "type": "textbox",
+          "id": "body",
+          "name": "Body",
+          "note": "",
+          "value": " 👁️‍🗨️ㅤI'm currently wearing a VR headset. I might not be able to respond to you right away\\nㅤ ㅤ I'll check my notifications periodically."
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "general",
+      "name": "✉️ [AutoReply] Footer text",
+      "collapsible": true,
+      "shown": false,
+      "settings": [
+        {
+          "type": "textbox",
+          "id": "footer",
+          "name": "Footer text",
+          "note": "",
+          "value": "⚠️ㅤIf this is an urgent matter or need to contact me ASAP, please send ``!urgent``."
+        }
+      ]
+    }
+  ],
+  "main": "index.js"
+}
