@@ -4,17 +4,25 @@
     "authors": [
       {
         "name": "YuzuZensai",
-        "discord_id": "",
-        "github_username": "YuzuZensai",
-        "twitter_username": "YuzuZensai"
+        "github_username": "YuzuZensai"
       }
     ],
     "version": "0.0.2",
     "description": "Allow urgent messages to bypass do not disturb mode, streamer mode and others.",
-    "github": "",
-    "github_raw": ""
+    "github": "https://github.com/YuzuZensai/UrgentNotification",
+    "github_raw": "https://raw.githubusercontent.com/YuzuZensai/UrgentNotification/main/release/UrgentNotification.plugin.js"
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "title": "Complete rewrite",
+      "type": "improved",
+      "items": [
+        "The plugin is now a complete rewrite of the original plugin. It is now a lot more efficient and has a lot more features.",
+        "Check out settings to see what you can do with it.",
+        "Fixed tons of bugs."
+      ]
+    }
+  ],
   "defaultConfig": [
     {
       "type": "textbox",
