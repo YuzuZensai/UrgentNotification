@@ -1,0 +1,22 @@
+{
+  "zplConfig": {
+    "base": "./src",
+    "out": "./release",
+    "copyToBD": true,
+    "addInstallScript": true
+  },
+  "dependencies": {
+    "zerespluginlibrary": "^2.0.6"
+  },
+  "scripts": {
+    "build": "zpl build UrgentNotification",
+    "init": "zpl init"
+  },
+  "name": "urgent-notification",
+  "version": "0.0.2",
+  "description": "BetterDiscord plugin that allow urgent messages to bypass do not disturb mode, streamer mode and others",
+  "main": "index.js",
+  "repository": "https://github.com/YuzuZensai/UrgentNotification.git",
+  "author": "Yuzu <yuzu@kirameki.cafe>",
+  "license": "GPL-3.0"
+}
